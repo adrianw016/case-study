@@ -49,11 +49,12 @@ export const MessageDetails: React.FC<Props> = (props: Props) => {
         <Box className="MessageDetails" p={2}>
             {props.message && <>
                 <Box p={1}>
-                    <div style={{display: 'flex', flexDirection: 'row'}}>
-                        <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" /> 
+                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                        <Avatar alt="Remy Sharp" src={message.avatar} />
+                        {message.sender}
+                    </div>
                         <strong className="MessageDetails__subject">{message.subject}</strong> 
                         <span className="MessageDetails__received">({message.received})</span>
-                    </div>
                 </Box>
                 <Box p={1} className="MessageDetails__message">
                     {message.message}
